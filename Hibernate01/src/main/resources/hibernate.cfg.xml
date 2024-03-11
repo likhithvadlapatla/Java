@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/JDBC</property>
+        <property name="hibernate.connection.username">likhith</property>
+        <property name="hibernate.connection.password">Likhith@31</property>
+        <!-- The bottom line creates a new table in the database-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- The bottom line tells hibernate to show the SQL query-->
+        <property name="hibernate.show_sql">true</property>
+        <!-- The bottom line tells hibernate to show the SQL query in a formatted manner-->
+        <property name="hibernate.format_sql">true</property>
+        <!-- The bottom line tells hibernate that it needs to convert Employee pojo into the database table-->
+        <mapping class="com.ge.model.Student"/>
+    </session-factory>
+</hibernate-configuration>

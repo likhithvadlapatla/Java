@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Creating multiple beans for same class.-->
+    <!-- bean definitions here -->
+    <bean id = "employee1" class = "com.ge.bean.Employee">
+        <!-- Type 1 : If you are passing the value to the constructor in order, you can use this process.-->
+        <constructor-arg value = "01"/>
+        <constructor-arg value = "Likhith"/>
+        <constructor-arg value = "85000.00"/>
+        <constructor-arg value = "Eluru"/>
+    </bean>
+
+    <bean id="employee2" class = "com.ge.bean.Employee">
+        <!-- Type 2 : If you are not passing the value to the constructor in order then you can pass them using index parameter like this.-->
+        <constructor-arg index = "2" value = "45000.00"/>
+        <constructor-arg index = "0" value = "02"/>
+        <constructor-arg index = "3" value="Eluru"/>
+        <constructor-arg index = "1" value="Triveni"/>
+    </bean>
+
+    <bean id="employee3" class = "com.ge.bean.Employee">
+        <!-- Type 3 : If you are not passing the value to the constructor in order then you can pass them using name parameter like this.-->
+        <constructor-arg name = "salary" value = "25000.00" type="java.lang.Double"/>
+        <constructor-arg name = "id" value = "03"/>
+        <constructor-arg name = "address" value="Eluru"/>
+        <constructor-arg name = "name" value="Chandra Kiran"/>
+    </bean>
+</beans>

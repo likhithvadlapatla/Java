@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.hmtmcse'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-context:5.3.19'
+    implementation 'org.springframework:spring-beans:5.3.19'
+    testImplementation 'org.springframework:spring-test:5.3.19'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,14 @@
+1. Spring Boot initializes the application context.
+2. SpringApplication.run(LaunchApplication.class, args) triggers the Spring Boot framework to start the application.
+3. Spring Boot then scans for components, configurations, and beans.
+4. It detects @SpringBootApplication annotation in LaunchApplication.java file.
+   This annotation also includes :
+                                   @ComponentScan which scans the annotations in the application.
+                                   @Configuration which tells that the file with that particular annotation has configuration information.
+5. Spring Data JPA is enabled via auto-configuration which includes scanning repositories as well.
+6. That is how it scans the repository interface IStudentRepo. It creates a dynamic proxy class for IStudentRepo which will handle method calls to the repository.
+7. Spring Data JPA creates the bean for the proxy class hence you can get the bean through ApplicationContext Container.
+8. Then the save method in the main method gets called. The proxy class of the IStudentRepo receives the call and it sends that call to EntityManager.
+9. The EntityManager handles the transaction context and decides to perform the Insert operation as we are using create in properties file.
+10. Hibernate then generates the SQL statement. That generated SQL statement is sent to the database via the JDBC connection.
+11. The database executes the statement and returns the result.

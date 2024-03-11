@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- Type 1 : Using "byType"
+         If you use autowiring byType setter dependency injection takes place. In the below example if you didn't specify primary="true" you will receive an error.
+    -->
+    <!--
+    <bean id = "dhl" class = "DHL"/>
+    <bean id = "blueDart" class = "BlueDart"/>
+    <bean id = "fedEx" class = "FedEx" primary = "true"/>
+    <bean class = "Amazon" autowire = "byType"/>
+    -->
+
+    <!-- Type 2 : Using "byType"
+         If you use autowiring byType setter dependency injection takes place. In the below example fedEx dependency object gets injected as we are assigning false to "autowire-candidate" parameter which means to not to consider those classes for the injection.
+    -->
+    <!--
+    <bean id = "dhl" class = "DHL" autowire-candidate = "false"/>
+    <bean id = "blueDart" class = "BlueDart" autowire-candidate = "false"/>
+    <bean id = "fedEx" class = "FedEx"/>
+    <bean class = "Amazon" autowire = "byType"/>
+    -->
+
+    <!-- Type 3 : Using "byName"
+         If you are autowiring byName then the name of the reference variable in the setter injection should be matched with one of the id's of dependency classes (In the below example the id of DHL dependency class is matched with the reference variable in the setter. Because of this reason DHL bean gets injected.
+    -->
+    <!--
+    <bean id = "service" class = "DHL"/>
+    <bean id = "blueDart" class = "BlueDart"/>
+    <bean id = "fedEx" class = "FedEx"/>
+    <bean class = "Amazon" autowire = "byName"/>
+    -->
+
+    <!-- Type 4 : Using "constructor"
+         This performs constructor injection.
+    -->
+    <!--
+    <bean id = "service" class = "DHL"/>
+    <bean id = "blueDart" class = "BlueDart"/>
+    <bean id = "fedEx" class = "FedEx" primary="true"/>
+    <bean class = "Amazon" autowire = "constructor"/>
+    -->
+
+    <!-- Type 5 : Using "no"
+         If you use this you need to perform manual injection.
+    -->
+    <bean id = "service" class = "DHL"/>
+    <bean id = "blueDart" class = "BlueDart"/>
+    <bean id = "fedEx" class = "FedEx"/>
+    <bean class = "Amazon" autowire = "no">
+        <property ref = "fedEx" name = "service"/>
+    </bean>
+
+</beans>
