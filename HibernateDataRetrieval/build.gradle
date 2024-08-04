@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+    implementation 'org.postgresql:postgresql:42.3.1'
+    // These two dependencies are required to use Level2 Cache in our code. Also the Hibernate EH Cache version and the hibernate versions should match.
+    implementation group: 'org.ehcache', name: 'ehcache', version: '3.1.0'
+    implementation group: 'org.hibernate', name: 'hibernate-ehcache', version: '5.6.15.Final'
+    // Other dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

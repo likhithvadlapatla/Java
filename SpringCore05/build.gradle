@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.hmtmcse'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-context:6.0.0'
+    implementation 'org.springframework:spring-beans:6.0.0'
+    implementation 'org.springframework:spring-core:6.0.0'
+    testImplementation 'org.springframework:spring-test:6.0.0'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+test {
+    useJUnitPlatform()
+}
