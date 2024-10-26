@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Entity {
+package PACKAGE_NAME;
+public class Entity {
+
 }

@@ -1,0 +1,12 @@
+{
+  "id" : 1,
+  "name" : "Likhith",
+  "city" : "Eluru",
+  "course" : {
+    "cid" : 1,
+    "cname" : "Spring",
+    "instructorName" : "Hyder Abbas",
+    "price" : 10000.00
+  },
+  "hobbies" : ["Playing","Eating","Watching"]
+}

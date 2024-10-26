@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.0' // Or whichever version of Spring Boot you're using
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.hmtmcse'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starter for RabbitMQ
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
+    // Spring Cloud Stream with RabbitMQ Binder
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // (Optional) If using functional programming
+    // implementation 'org.springframework.cloud:spring-cloud-function-context'
+    // implementation 'org.springframework.cloud:spring-cloud-function-adapter-rabbit'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.4" // Adjust version if necessary
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,25 @@
+User JSON :
+
+{
+    "id": 3,
+    "userName": "Kiran",
+    "password": "Kiran@22",
+    "role": "kiran@gmail.com",
+    "email": "Admin"
+}
+
+Task JSON :
+
+{
+    "id":4,
+    "title": "Code review for login page",
+    "description":"Review the code for the login code",
+    "userId":2,
+    "categoryId":1,
+    "priority":"Low",
+    "status":"Completed",
+    "dueDate":"2024-09-08",
+    "isOverdue":false
+}
+
+Access Swagger UI at : http://localhost:8087/swagger-ui/index.html#/
